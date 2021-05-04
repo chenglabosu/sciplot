@@ -50,7 +50,7 @@ matplotlib.rcParams['savefig.dpi']=300
 
 
 #   Plot figures
-def creat_subplot(xlabel='xlabel',ylabel='ylabel',rb=False,tb=False):
+def create_subplot(xlabel='xlabel',ylabel='ylabel',rb=False,tb=False):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.set_xlabel(xlabel)
@@ -66,6 +66,10 @@ def plot(ax,x,y,label='data1',color='steelblue'):
 def set_tick(ax,x_tick,y_tick):
     ax.set_xticks(x_tick)
     ax.set_yticks(y_tick)
+    return ax
+
+def fill_between(ax,x,y1,y2,color,alpha=0.5):
+    ax.fill_between(x,y1,y2,color=color,alpha=alpha)
     return ax
 
 def legend(ax,loc=None):
