@@ -50,14 +50,19 @@ matplotlib.rcParams['savefig.dpi']=300
 
 
 #   Plot figures
-def create_subplot(xlabel='xlabel',ylabel='ylabel',rb=False,tb=False):
+def create_subplot(xlabel='xlabel',ylabel='ylabel',rb=False,tb=False,xl=None,xh=None,yl=None,yh=None):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.spines['right'].set_visible(rb)
     ax.spines['top'].set_visible(tb)
+    if xl!=None and xh!=None:
+        ax.set_xlim([xl,xh])
+    if yl!=None and yh!=None:
+        ax.set_ylim([yl,yh])
     return fig,ax
+
 
 def plot(ax,x,y,label='data1',color='steelblue'):
     ax.plot(x,y,label=label,color=color)
