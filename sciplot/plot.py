@@ -67,8 +67,8 @@ def create_subplot(fig,xlabel='xlabel',ylabel='ylabel',pos=111,rb=False,tb=False
     return ax
 
 
-def plot(ax,x,y,label='data1',color='steelblue',alpha=1):
-    ax.plot(x,y,label=label,color=color,alpha=alpha)
+def plot(ax,x,y,label='data1',color='steelblue',alpha=1,lw=1):
+    ax.plot(x,y,label=label,color=color,alpha=alpha,*kwargs)
     return ax
 
 def bar(ax,x,y,width=0.8,label='label',color='steelblue'):
@@ -84,12 +84,14 @@ def fill_between(ax,x,y1,y2,color,alpha=0.5):
     ax.fill_between(x,y1,y2,color=color,alpha=alpha)
     return ax
 
+
 def legend(ax,loc=None):
     if loc==None:
         ax.legend()
     else:
         ax.legend(loc=loc)
     return ax
+
 
 def savefig(fig,name):
     fig.tight_layout()
