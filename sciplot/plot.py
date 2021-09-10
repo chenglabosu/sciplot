@@ -68,7 +68,7 @@ def create_subplot(fig,xlabel='xlabel',ylabel='ylabel',pos=111,rb=False,tb=False
 
 
 def plot(ax,x,y,label='data1',color='steelblue',alpha=1,lw=1):
-    ax.plot(x,y,label=label,color=color,alpha=alpha,*kwargs)
+    ax.plot(x,y,label=label,color=color,alpha=alpha,lw=lw)
     return ax
 
 def bar(ax,x,y,width=0.8,label='label',color='steelblue'):
