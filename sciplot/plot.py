@@ -19,9 +19,9 @@ Purple: violet, purple, magenta
 '''
 
 
-SIZE1 = 24
+SIZE1 = 16
 SIZE2 = 20
-SIZE3 = 16
+SIZE3 = 12
 
 plt.rc('font',family='serif')
 plt.rc('axes',titlesize=SIZE1)
@@ -51,8 +51,11 @@ matplotlib.rcParams['savefig.dpi']=300
 
 #   Plot figures
 
-def create_figure():
-    return plt.figure()
+def create_figure(figsize=None):
+    if figsize==None:
+        return plt.figure()
+    else:
+         return plt.figure(figsize=figsize)
 
 def create_subplot(fig,xlabel='xlabel',ylabel='ylabel',pos=111,rb=False,tb=False,xl=None,xh=None,yl=None,yh=None):
     ax = fig.add_subplot(pos)
